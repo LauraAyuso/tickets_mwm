@@ -26,5 +26,11 @@ public class AsuntoServicioImpl implements AsuntoServicio{
 		Asunto asunto=asuntoRepositorio.save(asuntoConvertidor.convertidorAsuntoModelo2Asunto(asuntoModelo));
 		return asuntoConvertidor.convertidorAsunto2ModeloAsunto(asunto);
 	}
+
+	@Override
+	public AsuntoModelo obtenerNombreAsunto(AsuntoModelo asuntoModelo) {
+		//Asunto asunto=asuntoRepositorio.
+		return null;
+	}
 	
 }
