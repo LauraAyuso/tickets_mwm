@@ -1,0 +1,6 @@
+@charset "UTF-8";
+.form-small-center {
+  max-width: 900px;
+  padding: 15px;
+  margin: 0 auto;
+}

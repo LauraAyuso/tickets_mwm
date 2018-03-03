@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"></meta>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+<title>Wisp</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous" />
+
+<!-- personal styles -->
+<link href="#" th:href="@{/principal/css/small-forms.css}"
+	rel="stylesheet" />
+<!-- Bootstrap core CSS -->
+</head>
+<body>
+	<div class="container">
+		<!-- Start Modal Asunto
+    ================================================== -->
+		<div class="modal" data-backdrop="static" data-keyboard="false"
+			id="M_Asunto" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+						<form action="#" th:action="@{/asuntos/agregarasunto}"
+							th:object="${asuntoModelo}" method="post">
+							<div class="form-row">
+								<div class="form-group col-md-12">
+									<label for="txt_ide_asunto" class="col-form-label">Identificador:</label>
+									<input type="text" class="form-control" id="txt_ide_asunto"
+										placeholder="Identificador del asunto" th:field="*{ide}"></input>
+								</div>
+								<div class="form-group col-md-12">
+									<label for="txt_nombre_asunto" class="col-form-label">Nombre:</label>
+									<input type="text" class="form-control" id="txt_nombre_asunto"
+										placeholder="Nombre del asunto" th:field="*{nombre}"></input>
+								</div>
+								<div class="form-group col-md-12">
+									<label for="message-text" class="col-form-label">Descripción:</label>
+									<textarea class="form-control" id="ta_descripcion_asunto"
+										placeholder="Datos sobre el asunto" th:field="*{descripcion}"></textarea>
+								</div>
+							</div>
+							<button class="btn btn-primary"
+								id="btn_guardar_asunto" type="submit">Guardar</button>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<a href="#" th:href="@{/asuntos/cancel}">
+							<button type="button" class="btn btn-danger">Cancelar</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script th:src="@{/principal/js/jquery.min.js}"></script>
+	<script th:src="@{/principal/js/bootstrap.min.js}"></script>
+	<script defer="defer"
+		src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#M_Asunto").modal("show")
+		});
+	</script>
+</body>
+</html>

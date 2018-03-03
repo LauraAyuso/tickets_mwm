@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"></meta>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+<title>Wisp</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous" />
+
+<!-- personal styles -->
+<link href="#" th:href="@{/principal/css/small-forms.css}"
+	rel="stylesheet" />
+<!-- Bootstrap core CSS -->
+</head>
+<body>
+	<div class="container">
+		<br></br> <br></br>
+		<form action="">
+			<div class="form-row">
+				<div class="form-group col-md-2 btn-group" role="group">
+				<a href="#" th:href="@{/ticket/ticketformulario}">
+					<button id="btnNuevoTicket" type="button"
+						class="btn btn-primary form-control" data-toggle="modal"
+						data-target="#M_Ticket">
+						<i class="fas fa-plus-circle"></i>Ticket
+					</button>
+				</a>
+					<a href="#" th:href="@{/asuntos/asuntoformulario}">
+						<button id="btnNuevoTicket" type="button"
+							class="btn btn-success form-control" data-toggle="modal"
+							data-target="#M_Asunto">
+							<i class="fas fa-plus-circle"></i>Asunto
+						</button>
+					</a>
+				</div>
+				<div class="input-group form-group offset-md-6 col-md-4">
+					<input type="text" class="form-control"
+						placeholder="dato para busqueda" id="asunto"></input> <span
+						class="input-group-append"> <span class="input-group-text"><span
+							class="fas fa-search"></span></span>
+					</span>
+				</div>
+			</div>
+		</form>
+		<div th:if="${resultadoAsunto == 1}" class="alert alert-success" role="alert">Asunto agregado correctamente</div>
+		<div th:if="${resultadoAsunto == 0}" class="alert alert-success" role="alert">Error agregando el asunto. revise su base de datos</div>
+		<br></br> <br></br>
+		<!-- Tabla -->
+		<table class="table-responsive-md table">
+			<thead class="table">
+				<tr>
+					<th scope="col">Acciones</th>
+					<th scope="col">#Ticket</th>
+					<th scope="col">Cliente</th>
+					<th scope="col">Asunto</th>
+					<th scope="col">Emisión</th>
+					<th scope="col">Estado</th>
+					<th scope="col">Prioridad</th>
+					<th scope="col">Encargado</th>
+				</tr>
+			</thead>
+			<tbody id="cuerpoTabla">
+				<tr>
+					<td>
+						<button type="button" class="btn btn-warning btn-sm">
+							<span class="fas fa-edit" aria-hidden="true"></span>
+						</button>
+						<button type="button" class="btn btn-danger btn-sm">
+							<span class="fas fa-trash-alt" aria-hidden="true"></span>
+						</button>
+						<button type="button" class="btn btn-info btn-sm">
+							<span class="fas fa-eye" aria-hidden="true"></span>
+						</button>
+					</td>
+					<td>2</td>
+					<td>usuariox</td>
+					<td>Problemas de red</td>
+					<td>27/02/2018</td>
+					<td>Nuevo</td>
+					<td>BAJA</td>
+					<td>Sin asignar</td>
+				</tr>
+				<tr>
+					<td>
+						<button type="button" class="btn btn-warning btn-sm">
+							<span class="fas fa-edit" aria-hidden="true"></span>
+						</button>
+						<button type="button" class="btn btn-danger btn-sm">
+							<span class="fas fa-trash-alt" aria-hidden="true"></span>
+						</button>
+						<button type="button" class="btn btn-info btn-sm">
+							<span class="fas fa-eye" aria-hidden="true"></span>
+						</button>
+					</td>
+					<td>2</td>
+					<td>usuarioy</td>
+					<td>Equipos</td>
+					<td>27/02/2018</td>
+					<td>Pendiente</td>
+					<td>ALTA</td>
+					<td>admin</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<script th:src="@{/principal/js/jquery.min.js}"></script>
+	<script th:src="@{/principal/js/bootstrap.min.js}"></script>
+	<script defer="defer"
+		src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</body>
+</html>

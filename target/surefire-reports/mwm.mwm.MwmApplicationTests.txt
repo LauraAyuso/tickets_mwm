@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: mwm.mwm.MwmApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 59.414 sec - in mwm.mwm.MwmApplicationTests

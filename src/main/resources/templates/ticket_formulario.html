@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"></meta>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+<title>Wisp</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous" />
+
+<!-- personal styles -->
+<link href="#" th:href="@{/principal/css/small-forms.css}"
+	rel="stylesheet" />
+<!-- Bootstrap core CSS -->
+</head>
+<body>
+	<div class="container">
+		<br></br> <br></br>
+		<!-- Start Modal Ticket
+    ================================================== -->
+		<div class="modal" data-backdrop="static" data-keyboard="false"
+			id="M_Ticket" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Creacion de ticket</h5>
+					</div>
+					<div class="modal-body">
+						<form action="#" th:action="@{/ticket/agregarticket}"
+							th:object="${ticketModelo}" method="post">
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label for="cb_clientes" class="col-form-label">Cliente</label>
+									<select class="form-control" id="cb_clientes">
+										<option selected="selected">Seleccione un cliente</option>
+										<option>usuariox (ID: 14)</option>
+										<option>usuarioy (ID: 15)</option>
+									</select>
+								</div>
+								<div class="form-group col-md-6">
+									<label for="cb_asuntos" class="col-form-label">Asunto:</label>
+									<select class="form-control" id="cb_asuntos">
+										<option selected="selected">Seleccione un asunto</option>
+										<option>Problemas de red</option>
+										<option>Equipos</option>
+									</select>
+								</div>
+								<div class="form-group col-md-12">
+									<label for="ta_descripcion_ticket" class="col-form-label">Descripción:</label>
+									<textarea class="form-control" id="ta_descripcion"></textarea>
+								</div>
+								<div class="alert alert-info col-md-12" role="alert">Todos
+									los tickets tienen un mes de validez</div>
+								<div class="form-group col-md-6">
+									<label for="txt_fe" class="col-form-label">Emision:</label> <input
+										type="text" class="form-control" id="txt_fe_ticket"
+										disabled="disabled" value="27/02/2018"></input>
+								</div>
+								<div class="form-group col-md-6">
+									<label for="txt_fv" class="col-form-label">Validez:</label> <input
+										type="text" class="form-control" id="txt_fv_ticket"
+										disabled="disabled" value="27/03/2018"></input>
+								</div>
+							</div>
+
+							<button type="button" class="btn btn-primary"
+								id="btn_guardar_ticket">Guardar</button>
+						</form>
+					</div>
+					<div class="modal-footer">
+					<a href="#" th:href="@{/ticket/cancel}">
+						<button type="button" class="btn btn-danger">Cancelar</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Modal
+    ================================================== -->
+	</div>
+	<script th:src="@{/principal/js/jquery.min.js}"></script>
+	<script th:src="@{/principal/js/bootstrap.min.js}"></script>
+	<script defer="defer"
+		src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	<script type="text/javascript" th:src="@{/ticket/js/ticketAdmin.js}"></script>
+	<script>
+		$(document).ready(function() {
+			$("#M_Ticket").modal("show")
+		});
+	</script>
+</body>
+</html>
